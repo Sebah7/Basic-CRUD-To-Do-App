@@ -3,8 +3,6 @@
 include_once 'setup.php'; // Include the database connection
 
 try {
-    $conn = pdo_mysql(); // Initialize the database connection
-
     // Prepare the SQL statement to fetch taskss
     $sql = 'SELECT * FROM Tasks ORDER BY id';
     $stmt = $conn->prepare($sql);
@@ -43,7 +41,8 @@ $conn = null;
             <tr>
                 <td><?=$task['title']?></td>
                 <td><?=$task['description']?></td>
-                <td><?=$task['done']?></td>
+                <td><input type="checkbox" <?=$task['done'] == '1' ? 'checked' : ''?>
+                disabled></td> <!-- Checkbox -->
                 <td class="actions">
                     <a href="update.php?id=<?=$task['id']?>" class="edit"><i class="fas fa-pen fa-xs"></i></a>
                     <a href="delete.php?id=<?=$task['id']?>" class="trash"><i class="fas fa-trash fa-xs"></i></a>
