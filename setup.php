@@ -25,22 +25,24 @@ function pdo_mysql() {
 function header_temp($title) {
 echo <<<EOT
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>$title</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body>
-    <nav class="nav">
-	<div>
-		<h1>Todo App</h1>
-				<a href="index.php"><i class="fas fa-home"></i>Home</a>
-		    <a href="read.php"><i class="fas fa-list-check"></i> View</a>
-				<a href="create.php"><i class="fas fa-address-book"></i> Add</a>
-	</div>
+	<header>
+    <nav>
+	<ul>
+				<li><a href="index.php"><i class="fas fa-home"></i>Home</a></li>
+		    <li><a href="read.php"><i class="fas fa-list-check"></i> View</a></li>
+				<li><a href="create.php"><i class="fas fa-address-book"></i> Add</a></li>
+	</ul>
 </nav>
+</header>
 EOT; // Heredoc syntax for the end of header template
 }
 
