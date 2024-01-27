@@ -25,20 +25,22 @@ $conn = null;
 
 <div class="content read">
 	<h2>Viewing Tasks</h2>
-	<a href="create.php" class="create-tasks">New Task</a>
 	<table>
         <thead>
             <tr>
-                <td>title</td>
-                <td>description</td>
-                <td>done</td>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Done</td>
                 <td></td>
             </tr>
         </thead>
         <tbody>
             <!-- A dynamic php loop -->
+            <?php $count = 1; ?> <!-- for the task count -->
             <?php foreach ($tasks as $task): ?>
             <tr>
+                 <td><?=$count++?></td> <!-- to display count -->
                 <td><?=$task['title']?></td>
                 <td><?=$task['description']?></td>
                 <td><input type="checkbox" <?=$task['done'] == '1' ? 'checked' : ''?>
