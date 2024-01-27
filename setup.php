@@ -1,15 +1,18 @@
 <?php
 
+$conn = pdo_mysql();
+
 function pdo_mysql() {
     $servername = 'db';
     $dbuser = 'root';
     $dbpassword = 'mariadb';
     $dbname = 'sebtodo';
+
 		// A Database connection using PDO
         try {
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dbuser, $dbpassword);
                 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connected successfully";
+                // echo "Connected successfully";
 								return $conn; // Return PDO connection object
 
             } catch (PDOException $e) {
@@ -34,8 +37,8 @@ echo <<<EOT
 	<div>
 		<h1>Todo App</h1>
 				<a href="index.php"><i class="fas fa-home"></i>Home</a>
-		        <a href="read.php"><i class="fas fa-address-book"></i>View</a>
-				<a href="create.php"><i class="fas fa-address-book"></i>Add</a>
+		    <a href="read.php"><i class="fas fa-list-check"></i> View</a>
+				<a href="create.php"><i class="fas fa-address-book"></i> Add</a>
 	</div>
 </nav>
 EOT; // Heredoc syntax for the end of header template
