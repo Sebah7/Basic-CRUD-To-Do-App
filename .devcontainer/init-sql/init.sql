@@ -8,11 +8,10 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 DROP TABLE IF EXISTS `Tasks`;
 CREATE TABLE `Tasks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` text NOT NULL,
-  `description` text NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `done` tinyint(6) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
-
--- 2024-01-18 15:15:45
+-- 2024-01-25 11:37:36
