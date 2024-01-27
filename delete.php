@@ -2,6 +2,16 @@
 include 'setup.php';
 $msg = '';
 
+// To get all data from database
+try {
+    $sql = 'SELECT * FROM Tasks ORDER BY id';
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo 'Error: ' . $e->getMessage();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
 
     // Get task by id
@@ -26,23 +36,50 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
           exit;
       }
     }
-  } else {
-      exit('No ID specified!');
-  }
+
+
+} elseif ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['ids']) && is_array($_GET['ids'])) {
+    // multiple slect delete
+    $ids = $_GET['ids'];
+
+    $ids_str = implode(',', $ids);
+
+    try {
+        // Selected id task delete
+        $stmt = $conn->prepare("DELETE FROM Tasks WHERE id IN ($ids_str)");
+        $stmt->execute();
+
+        $msg = 'Selected tasks have been deleted successfully!';
+    } catch (PDOException $e) {
+        echo 'Error: ' . $e->getMessage();
+    }
+} else {
+    exit('Invalid request!');
+}
 ?>
 
 <?=header_temp('Delete')?>
 
 <div class="content delete">
-	<h2>Delete task #<?=$task['id']?></h2>
+	<h2>Delete tasks</h2>
     <?php if ($msg): ?>
     <p><?=$msg?></p>
     <?php else: ?>
-	<p>Are you sure you want to delete task #<?=$task['id']?>?</p>
+        <p>Are you sure you want to delete task #<?=$task['id']?>?</p>
     <div class="yesno">
         <a href="delete.php?id=<?=$task['id']?>&confirm=yes">Yes</a>
         <a href="delete.php?id=<?=$task['id']?>&confirm=no">No</a>
     </div>
+    <hr>
+        <p>Or delete multiple tasks:</p>
+        <form action="delete.php" method="get">
+            <?php foreach ($tasks as $task): ?>
+                <label>
+                    <input type="checkbox" name="ids[]" value="<?=$task['id']?>"> Task #<?=$task['id']?>
+                </label><br>
+            <?php endforeach; ?>
+            <input type="submit" value="Delete Selected Tasks">
+        </form>
     <?php endif; ?>
 </div>
 
