@@ -1,0 +1,288 @@
+:root {
+  --yellowish-green: #b7db2a;
+  --rich-purple: #7D0C6C;
+  --deep-violet: #4b0841;
+  --fun-blue: #25629f;
+  --pinkish: #e0919ece;
+  --white: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url(/media/pinkback.webp);
+  background-color: var(--white);
+}
+
+/* Header */
+header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1.5%;
+}
+
+nav {
+  background-color: var(--rich-purple);
+  height: 60px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+ul li {
+  margin: 10px;
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+  color: var(--yellowish-green);
+  font-size: 1rem;
+}
+
+/* Content */
+.content {
+  margin: 20px auto;
+  width: 80%;
+}
+
+.homeflex{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-items:nth-child(1) {
+  /* margin: 15px; */
+  flex-grow: 7;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin: 10px;
+  padding: 20px;
+  border: 3px solid var(--deep-violet);
+  background-color: var(--pinkish);
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  border-radius: 5rem;
+}
+
+.flex-items:nth-child(2) {
+  margin: 15px;
+  flex-grow: 3;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin: 10px;
+  padding: 20px;
+  border: 3px solid var(--deep-violet);
+  background-color: var(--pinkish);
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  border-radius: 5rem;
+}
+
+h1 {
+  margin-block-end: 1.5rem;
+  text-wrap: balance;
+  padding: 0.5%;
+  font-size: 2.5rem;
+  color: var(--fun-blue);
+}
+
+.content p {
+  font-weight: bolder;
+  font-size: 1.2rem;
+  color: var(--fun-blue);
+}
+
+.content h2 {
+  margin: 0;
+  padding: 2.5% 0;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #ebebeb;
+  color: rgb(92, 79, 79);
+}
+
+/* INDEX */
+.index-ul {
+list-style: none;
+padding-left: 0;
+}
+.index-ul li {
+  margin-bottom: 10px;
+}
+.index-ul li a {
+  color: var(--fun-blue);
+}
+.index-href {
+  color: var(--yellowish-green);
+  text-decoration: none;
+}
+
+.index-href:hover {
+  text-decoration: underline;
+}
+
+/* READ */
+
+.read table {
+  width: 100%;
+  padding-top: 3%;
+  border-collapse: collapse;
+}
+.read table thead {
+  background-color: var(--rich-purple);
+  border-bottom: 1px solid #d3dae0;
+}
+.read table thead td {
+  padding: 1%;
+  font-weight: bold;
+  color: var(--yellowish-green);
+  font-size: 1.4vw;
+}
+.read table tbody tr {
+  border-bottom: 1px solid #d3dae0;
+}
+.read table tbody tr:nth-child(even) {
+  background-color: #fbfcfc;
+}
+.read table tbody tr:hover {
+  background-color: #376ab7;
+}
+.read table tbody tr:hover td {
+  color: var(--white);
+}
+.read table tbody tr:hover td:nth-child(1) {
+  color: var(--white);
+}
+.read table tbody tr td {
+  background-color: #ccccccba;
+  padding: 1%;
+}
+.read table tbody tr td:nth-child(1) {
+  color: var(--fun-blue);
+}
+.read table tbody tr td.actions {
+  padding: 0.8%;
+  text-align: right;
+}
+.read table tbody tr td.actions .edit, .read table tbody tr td.actions .trash {
+  display: inline-flex;
+  text-align: right;
+  text-decoration: none;
+  color: var(--white);
+  padding: 10px 12px;
+}
+.read table tbody tr td.actions .trash {
+  background-color: #b73737;
+}
+.read table tbody tr td.actions .trash:hover {
+  background-color: #a33131;
+}
+.read table tbody tr td.actions .edit {
+  background-color: #37afb7;
+}
+.read table tbody tr td.actions .edit:hover {
+  background-color: #319ca3;
+}
+
+/* UPDATE */
+.update form {
+  padding: 1.5% 0;
+  display: flex;
+  flex-flow: wrap;
+}
+.update form label {
+  display: inline-flex;
+  width: 40%;
+  padding: 1% 0;
+  margin-right: 2.5%;
+}
+.update form input {
+  padding: 1%;
+  width: 40%;
+  margin-right: 2.5%;
+  margin-bottom: 1.5%;
+  border: 1px solid #cccccc;
+}
+.update form input[type="submit"] {
+  display: block;
+  background-color: var(--deep-violet);
+  border: 0;
+  font-weight: bold;
+  font-size: 1.8vw;
+  color: var(--white);
+  cursor: pointer;
+  width: 20%;
+margin-top: 1.5%;
+}
+.update form input[type="submit"]:hover {
+  background-color: #32a367;
+}
+
+/* DELETE */
+
+.delete-button {
+  border: none;
+  color: white;
+  padding: 1% 2%;
+  margin: 0.4% 0.8%;
+  cursor: pointer;
+}
+
+.delete .yesno {
+  display: flex;
+}
+.delete-button, .delete .yesno a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--deep-violet);
+  font-weight: bold;
+  color: var(--white);
+  padding: 1% 1.5%;
+  margin: 1.5% 1% 1.5% 0;
+}
+.delete .yesno a:hover {
+  background-color: #32a367;
+}
+
+/* Footer */
+footer {
+  background-color: var(--rich-purple);
+  color: var(--yellowish-green);
+  position: fixed;
+  bottom: 0; 
+  width: 100%; 
+  padding: 1.5%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5rem;
+}
+
+footer p {
+  margin: 0;
+}
