@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
     <?php if ($msg): ?>
     <p><?=$msg?></p>
     <?php else: ?>
-        <p>Are you sure you want to delete task #<?=$task['id']?>?</p>
+        <p>Are you sure you want to delete task #<?=$task['title']?>?</p>
     <div class="yesno">
         <a href="delete.php?id=<?=$task['id']?>&confirm=yes">Yes</a>
         <a href="delete.php?id=<?=$task['id']?>&confirm=no">No</a>

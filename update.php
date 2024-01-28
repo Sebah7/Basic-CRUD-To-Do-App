@@ -43,10 +43,10 @@ $conn = null;
 	<h2>Update Task</h2>
     <form action="update.php?id=<?=$task['id']?>" method="post">
         <label for="title">Title</label>
-        <input type="text" name="title" placeholder="buy book" value="<?=$task['title']?>" id="title" required>
+        <input type="text" name="title" placeholder="task title" value="<?=$task['title']?>" id="title" required>
         
         <label for="description">Description</label>
-        <input type="text" name="description" placeholder="descriptiondescriptiondescription" value="<?=$task['description']?>" id="description" required>
+        <input type="text" name="description" placeholder="description of your task" value="<?=$task['description']?>" id="description" required>
         
         <label for="done">Done:</label>
         <input type="checkbox" name="done" <?=$task['done'] == '1' ? 'checked' : ''?>>
