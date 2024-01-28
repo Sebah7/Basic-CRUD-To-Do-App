@@ -9,9 +9,9 @@ include 'setup.php';
 <div class="content">
 	<h1>The 2024 Todo App</h1>
 	<p>Helps you keep track of your tasks!</p>
-	<ul>
-		<li><a href="create.php">Add a new task</a></li>
-		<li><a href="read.php">View and edit tasks</a></li>
+	<ul class="index-ul">
+		<li><a class="index-href" href="create.php">Add a new task</a></li>
+		<li><a class="index-href" href="read.php">View and edit tasks</a></li>
 	</ul>
 </div>
 

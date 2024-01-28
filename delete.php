@@ -75,8 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
         <form action="delete.php" method="get">
             <?php foreach ($tasks as $task): ?>
                 <label>
-                    <input type="checkbox" name="ids[]" value="<?=$task['id']?>"> Task #<?=$task['id']?>
-                </label><br>
+                    <input type="checkbox" name="ids[]" value="<?=$task['id']?>"> Task "<?=$task['title']?>" </label><br>
             <?php endforeach; ?>
             <input type="submit" value="Delete Selected Tasks" class="delete-button">
         </form>

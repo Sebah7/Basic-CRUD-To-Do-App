@@ -40,7 +40,7 @@ $conn = null;
 <?=header_temp('Update')?>
 
 <div class="content update">
-	<h2>Update Task #<?=$task['id']?></h2>
+	<h2>Update Task</h2>
     <form action="update.php?id=<?=$task['id']?>" method="post">
         <label for="title">Title</label>
         <input type="text" name="title" placeholder="buy book" value="<?=$task['title']?>" id="title" required>
