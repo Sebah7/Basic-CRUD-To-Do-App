@@ -1,6 +1,7 @@
 <?php
 // database connection
 include_once ("setup.php");
+$msg = '';
 
 // When request is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +17,7 @@ try{
  VALUES('$title', '$description', $done)";
  $conn->exec($sql);
 
- echo "New task created successfully";
+ $msg = 'New task created successfully!';
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
@@ -36,6 +37,9 @@ $conn = null;
         <input type="text" name="description" placeholder="Buy the book for the store" id="description" required>
         <input type="submit" value="Create">
     </form>
+    <?php if ($msg): ?>
+    <p><?=$msg?></p>
+    <?php endif; ?>
 </div>
 
 <?=footer_temp()?>

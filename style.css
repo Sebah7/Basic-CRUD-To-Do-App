@@ -1,7 +1,10 @@
 :root {
-  --text-color: #b7db2a;
-  --head-foot-background: #7D0C6C;
-
+  --yellowish-green: #b7db2a;
+  --rich-purple: #7D0C6C;
+  --deep-violet: #4b0841;
+  --fun-blue: #25629f;
+  --pinkish: #e0919ece;
+  --white: #FFFFFF;
 }
 
 * {
@@ -14,9 +17,9 @@ body {
   margin: 0;
   width: 100%;
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url(/media/pinkback.webp);
-  background-color: #FFFFFF;
+  background-color: var(--white);
 }
 
 /* Header */
@@ -29,7 +32,7 @@ header{
 }
 
 nav {
-  background-color: var(--head-foot-background);
+  background-color: var(--rich-purple);
   height: 60px;
   padding: 10px 0;
   width: 100%;
@@ -47,12 +50,13 @@ nav ul {
 }
 
 ul li {
+  margin: 10px;
   font-weight: bold;
 }
 
 a{
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--yellowish-green);
   font-size: 1rem;
 }
 
@@ -61,18 +65,58 @@ a{
   margin: 20px auto;
   width: 80%;
 }
+
+.homeflex{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-items:nth-child(1) {
+  /* margin: 15px; */
+  flex-grow: 7;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin: 10px;
+  padding: 20px;
+  border: 3px solid var(--deep-violet);
+  background-color: var(--pinkish);
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  border-radius: 5rem;
+}
+
+.flex-items:nth-child(2) {
+  margin: 15px;
+  flex-grow: 3;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin: 10px;
+  padding: 20px;
+  border: 3px solid var(--deep-violet);
+  background-color: var(--pinkish);
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  border-radius: 5rem;
+}
+
 h1 {
-  margin: 20px 0;
+  margin-block-end: 1.5rem;
+  text-wrap: balance;
   padding: 0.5%;
   font-size: 2.5rem;
-  color: #292727a1;
+  color: var(--fun-blue);
 }
 
 .content p {
   font-weight: bolder;
-  margin-bottom: 20px;
   font-size: 1.2rem;
-  color: var(--text-color);
+  color: var(--fun-blue);
 }
 
 .content h2 {
@@ -86,14 +130,16 @@ h1 {
 /* INDEX */
 .index-ul {
 list-style: none;
-color: whitesmoke;
 padding-left: 0;
 }
 .index-ul li {
   margin-bottom: 10px;
 }
+.index-ul li a {
+  color: var(--fun-blue);
+}
 .index-href {
-  color: var(--head-foot-background);
+  color: var(--yellowish-green);
   text-decoration: none;
 }
 
@@ -109,13 +155,13 @@ padding-left: 0;
   border-collapse: collapse;
 }
 .read table thead {
-  background-color: var(--head-foot-background);
+  background-color: var(--rich-purple);
   border-bottom: 1px solid #d3dae0;
 }
 .read table thead td {
   padding: 1%;
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--yellowish-green);
   font-size: 1.4vw;
 }
 .read table tbody tr {
@@ -128,17 +174,17 @@ padding-left: 0;
   background-color: #376ab7;
 }
 .read table tbody tr:hover td {
-  color: #FFFFFF;
+  color: var(--white);
 }
 .read table tbody tr:hover td:nth-child(1) {
-  color: #FFFFFF;
+  color: var(--white);
 }
 .read table tbody tr td {
   background-color: #ccccccba;
   padding: 1%;
 }
 .read table tbody tr td:nth-child(1) {
-  color: #25629f;
+  color: var(--fun-blue);
 }
 .read table tbody tr td.actions {
   padding: 0.8%;
@@ -148,7 +194,7 @@ padding-left: 0;
   display: inline-flex;
   text-align: right;
   text-decoration: none;
-  color: #FFFFFF;
+  color: var(--white);
   padding: 10px 12px;
 }
 .read table tbody tr td.actions .trash {
@@ -185,11 +231,11 @@ padding-left: 0;
 }
 .update form input[type="submit"] {
   display: block;
-  background-color: #38b673;
+  background-color: var(--deep-violet);
   border: 0;
   font-weight: bold;
   font-size: 1.8vw;
-  color: #FFFFFF;
+  color: var(--white);
   cursor: pointer;
   width: 20%;
 margin-top: 1.5%;
@@ -214,9 +260,9 @@ margin-top: 1.5%;
 .delete-button, .delete .yesno a {
   display: inline-block;
   text-decoration: none;
-  background-color: #38b673;
+  background-color: var(--deep-violet);
   font-weight: bold;
-  color: #FFFFFF;
+  color: var(--white);
   padding: 1% 1.5%;
   margin: 1.5% 1% 1.5% 0;
 }
@@ -226,14 +272,15 @@ margin-top: 1.5%;
 
 /* Footer */
 footer {
-  background-color: var(--head-foot-background);
-  color: var(--text-color);
+  background-color: var(--rich-purple);
+  color: var(--yellowish-green);
   position: fixed;
   bottom: 0; 
   width: 100%; 
   padding: 1.5%;
   text-align: center;
   font-weight: bold;
+  border-radius: 5rem;
 }
 
 footer p {
