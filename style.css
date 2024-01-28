@@ -1,0 +1,241 @@
+:root {
+  --text-color: #b7db2a;
+  --head-foot-background: #7D0C6C;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: url(/media/pinkback.webp);
+  background-color: #FFFFFF;
+}
+
+/* Header */
+header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1.5%;
+}
+
+nav {
+  background-color: var(--head-foot-background);
+  height: 60px;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+ul li {
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+/* Content */
+.content {
+  margin: 20px auto;
+  width: 80%;
+}
+h1 {
+  margin: 20px 0;
+  padding: 0.5%;
+  font-size: 2.5rem;
+  color: #292727a1;
+}
+
+.content p {
+  font-weight: bolder;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
+.content h2 {
+  margin: 0;
+  padding: 2.5% 0;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #ebebeb;
+  color: rgb(92, 79, 79);
+}
+
+/* INDEX */
+.index-ul {
+list-style: none;
+color: whitesmoke;
+padding-left: 0;
+}
+.index-ul li {
+  margin-bottom: 10px;
+}
+.index-href {
+  color: var(--head-foot-background);
+  text-decoration: none;
+}
+
+.index-href:hover {
+  text-decoration: underline;
+}
+
+/* READ */
+
+.read table {
+  width: 100%;
+  padding-top: 3%;
+  border-collapse: collapse;
+}
+.read table thead {
+  background-color: var(--head-foot-background);
+  border-bottom: 1px solid #d3dae0;
+}
+.read table thead td {
+  padding: 1%;
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: 1.4vw;
+}
+.read table tbody tr {
+  border-bottom: 1px solid #d3dae0;
+}
+.read table tbody tr:nth-child(even) {
+  background-color: #fbfcfc;
+}
+.read table tbody tr:hover {
+  background-color: #376ab7;
+}
+.read table tbody tr:hover td {
+  color: #FFFFFF;
+}
+.read table tbody tr:hover td:nth-child(1) {
+  color: #FFFFFF;
+}
+.read table tbody tr td {
+  background-color: #ccccccba;
+  padding: 1%;
+}
+.read table tbody tr td:nth-child(1) {
+  color: #25629f;
+}
+.read table tbody tr td.actions {
+  padding: 0.8%;
+  text-align: right;
+}
+.read table tbody tr td.actions .edit, .read table tbody tr td.actions .trash {
+  display: inline-flex;
+  text-align: right;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 10px 12px;
+}
+.read table tbody tr td.actions .trash {
+  background-color: #b73737;
+}
+.read table tbody tr td.actions .trash:hover {
+  background-color: #a33131;
+}
+.read table tbody tr td.actions .edit {
+  background-color: #37afb7;
+}
+.read table tbody tr td.actions .edit:hover {
+  background-color: #319ca3;
+}
+
+/* UPDATE */
+.update form {
+  padding: 1.5% 0;
+  display: flex;
+  flex-flow: wrap;
+}
+.update form label {
+  display: inline-flex;
+  width: 40%;
+  padding: 1% 0;
+  margin-right: 2.5%;
+}
+.update form input {
+  padding: 1%;
+  width: 40%;
+  margin-right: 2.5%;
+  margin-bottom: 1.5%;
+  border: 1px solid #cccccc;
+}
+.update form input[type="submit"] {
+  display: block;
+  background-color: #38b673;
+  border: 0;
+  font-weight: bold;
+  font-size: 1.8vw;
+  color: #FFFFFF;
+  cursor: pointer;
+  width: 20%;
+margin-top: 1.5%;
+}
+.update form input[type="submit"]:hover {
+  background-color: #32a367;
+}
+
+/* DELETE */
+
+.delete-button {
+  border: none;
+  color: white;
+  padding: 1% 2%;
+  margin: 0.4% 0.8%;
+  cursor: pointer;
+}
+
+.delete .yesno {
+  display: flex;
+}
+.delete-button, .delete .yesno a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #38b673;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding: 1% 1.5%;
+  margin: 1.5% 1% 1.5% 0;
+}
+.delete .yesno a:hover {
+  background-color: #32a367;
+}
+
+/* Footer */
+footer {
+  background-color: var(--head-foot-background);
+  color: var(--text-color);
+  position: fixed;
+  bottom: 0; 
+  width: 100%; 
+  padding: 1.5%;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+}
